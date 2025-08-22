@@ -1,0 +1,8 @@
+name: mxd-runtimes
+services:
+  builder:
+    image: gradle:8.14.3-jdk17-alpine
+    command: gradle clean dockerize
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./:/home/gradle
