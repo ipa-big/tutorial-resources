@@ -8,6 +8,7 @@ edc = "0.12.0"
 ih = "0.12.0"
 tractusx = "0.9.0"
 tractusx-issuer = "0.1.0-SNAPSHOT"
+edcIssuer = "0.12.0"
 commons = "2.11.0"
 opentelemetry = "1.32.0"
 postgres = "42.7.3"
@@ -73,7 +74,7 @@ edc-sql-sts-store = { module = "org.eclipse.edc:sts-client-store-sql", version.r
 
 # Tractus-X Runtime BOMs
 edc-tx-controlplane = { module = "org.eclipse.tractusx.edc:edc-controlplane-postgresql-hashicorp-vault", version.ref = "tractusx" }
-bom-issuer = { module = "org.eclipse.tractusx.issuer:issuerservice", version.ref = "tractusx-issuer" }
+bom-issuer = { module = "org.eclipse.edc:issuerservice-bom", version.ref = "edcIssuer" }
 
 # third-party libraries
 apache-commons = { module = "org.apache.commons:commons-dbcp2", version.ref = "commons" }
