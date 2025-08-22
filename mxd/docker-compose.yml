@@ -6,4 +6,4 @@ services:
       - ./:/project
       - /var/run/docker.sock:/var/run/docker.sock
     extra_hosts:
-      - "mxd-control-plane:<insert-docker-gateway-ip>"
+      - "mxd-control-plane:host-gateway"
