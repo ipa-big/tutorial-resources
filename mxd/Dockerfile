@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-RUN apt update && apt install -y iputils-ping
+RUN apt update && apt install -y iputils-ping dos2unix
 
 # Install Terraform
 RUN apt update && apt install -y vim curl wget gpg lsb-release netcat
