@@ -47,10 +47,10 @@ resource "helm_release" "bdrs-server" {
     })
   ]
 
-  set {
-    name  = "install.postgresql"
-    value = false
-  }
+  set = [ {
+      name  = "install.postgresql"
+      value = false
+    }]
 }
 
 locals {

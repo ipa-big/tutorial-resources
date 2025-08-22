@@ -139,30 +139,30 @@ resource "helm_release" "connector" {
       }
     })
   ]
-  set {
-    name  = "participant.id"
-    value = var.participantId
-  }
+  set = [{
+      name  = "participant.id"
+      value = var.participantId
+    },
 
-  set {
-    name  = "postgresql.jdbcUrl"
-    value = local.jdbcUrl
-  }
+    {
+      name  = "postgresql.jdbcUrl"
+      value = local.jdbcUrl
+    },
 
-  set {
-    name  = "postgresql.auth.username"
-    value = var.database-credentials.user
-  }
+    {
+      name  = "postgresql.auth.username"
+      value = var.database-credentials.user
+    },
 
-  set {
-    name  = "postgresql.auth.password"
-    value = var.database-credentials.password
-  }
-  // we'll use a central postgres
-  set {
-    name  = "install.postgresql"
-    value = "false"
-  }
+    {
+      name  = "postgresql.auth.password"
+      value = var.database-credentials.password
+    },
+    // we'll use a central postgres
+    {
+      name  = "install.postgresql"
+      value = "false"
+    }]
 }
 
 resource "kubernetes_config_map" "participants-map" {
