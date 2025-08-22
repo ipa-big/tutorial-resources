@@ -55,5 +55,4 @@ RUN ./get_helm.sh
 #RUN cd /tractus-x && git clone https://github.com/eclipse-tractusx/tutorial-resources.git
 
 WORKDIR /project
-
-CMD sleep infinity
+CMD dos2unix  ./scripts/setup_mxd.sh && chmod +x ./scripts/setup_mxd.sh && ./scripts/setup_mxd.sh
