@@ -2,7 +2,6 @@ name: mxd
 services:
   mxd-runner:
     build: .
-    command: sleep infinity
     volumes:
       - ./:/project
       - /var/run/docker.sock:/var/run/docker.sock
