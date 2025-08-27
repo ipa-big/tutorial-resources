@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 kind create cluster -n mxd --config /project/kind.config.yaml
+kind export kubeconfig --name mxd
 cp ~/.kube/config .
 sed -i 's@https://127.0.0.1@https://mxd-control-plane@' ~/.kube/config
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
